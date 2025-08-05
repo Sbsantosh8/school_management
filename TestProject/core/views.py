@@ -15,6 +15,8 @@ class SchoolListCreateView(APIView):
     def get(self, request):
         schools = School.objects.all().order_by("name")  # Ordered for index usage
         serializer = SchoolSerializer(schools, many=True)
+        import pdb;
+        pdb.set_trace()
         return Response(serializer.data)
 
     def post(self, request):
